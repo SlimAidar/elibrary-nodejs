@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c1ea00a-7d4c-4077-9cee-45e5c9219a5d" name="Default Changelist" comment="" />
+    <list default="true" id="3c1ea00a-7d4c-4077-9cee-45e5c9219a5d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/views/add-book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/BookController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/BookController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Book.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/bookRoutes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/bookRoutes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/books.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/books.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +31,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1S1EzPLvGTJUD9rCaSw28c2tqiT" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.0" />
@@ -52,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570722963731</updated>
-      <workItem from="1570722965643" duration="12418000" />
+      <workItem from="1570722965643" duration="18741000" />
     </task>
     <servers />
   </component>
@@ -69,5 +82,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

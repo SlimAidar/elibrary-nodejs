@@ -18,48 +18,38 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item" style="border-left: white 1px solid; padding-left: 2em; padding-right: 2em;">
-                <a class="nav-link" href="/elibrary/book/list">Browse Books</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <a style="color: #ffffff; margin-right: 0em;" class="nav-link" href="#">John Doe</a>
-            <a href="#" class="btn btn-secondary">Sign In</a>
-        </form>
-    </div>
 </nav>
 
 <p>&nbsp;</p>
 <div class="container">
-    <h3>
-        Brows all books
-        <a class="btn btn-primary" href="/elibrary/book/add">Add new book</a>
-    </h3>
+    <h3>Add new Book</h3>
     <hr/>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Authors</th>
-            <th scope="col">ISBN</th>
-        </tr>
-        </thead>
-        <tbody>
-        {{#books}}
-        <tr>
-            <th scope="row">{{id}}</th>
-            <td>{{title}}</td>
-            <td>{{authors}}</td>
-            <td>{{isbn}}</td>
-        </tr>
-        {{/books}}
-        </tbody>
-    </table>
+    {{#errors}}
+    <div class="alert alert-danger">
+        {{#constraints}}
+        <li> {{length}} </li>
+        <li> {{isNotEmpty}} </li>
+        {{/constraints}}
+    </div>
+    {{/errors}}
+    <form action="/elibrary/book/add" method="post">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <div class="form-group">
+            <span>Title: </span>
+            <input type="text" name="title" class="form-control" id="title">
+        </div>
+        <div class="form-group">
+            <span>ISBN: </span>
+            <input type="text" name="isbn" class="form-control">
+        </div>
+        <div class="form-group">
+            <span>Authors: <small>if there is multi authors seperate them by comma ','</small></span>
+            <input type="text" name="authors" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="form-control btn btn-primary">
+        </div>
+    </form>
 </div>
 
 <!--     <footer class="footer">

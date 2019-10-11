@@ -2,17 +2,18 @@ import "reflect-metadata";
 import {createConnection, getRepository} from "typeorm";
 import * as express from "express";
 import * as bodyParser from "body-parser";
-import {Request, Response} from "express";
+import {NextFunction, Request, Response} from "express";
 import {Routes} from "./routes";
-import * as path from "path";
 import * as mustacheExpress  from "mustache-express";
-import {Book} from "./entity/Book";
+import * as cookieParser from "cookie-parser";
+import * as csrf from "csurf";
 
 createConnection().then(async connection => {
 
     // create express app
     const app = express();
     app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: true }));
 
     // register express routes from defined application routes
     Routes.forEach(route => {
@@ -27,18 +28,27 @@ createConnection().then(async connection => {
     });
 
     // setup express app here
+
+
+
     // Register '.mustache' extension with The Mustache Express
     app.engine('html', mustacheExpress());
+    app.use(cookieParser());
+    // setup route middlewares
+    const csrfProtection = csrf({ cookie: true });
+    const parseForm = bodyParser.urlencoded({ extended: true });
+
+
 
     app.set('view engine', 'html');
     app.set('views', __dirname + '/views');
 
 
-    // const book = new Book()
-    // book.title = "very nce book";
-    // book.isbn = "123-132-541";
-    // book.authors = ['jhon', 'doe', 'flan'];
-    // getRepository(Book).save(book);
+    //MiddleWares
+    app.use('/elibrary/book/add',parseForm, csrfProtection, (req: Request, res: Response, next: NextFunction) => {
+        req.csrf = csrfProtection;
+        next();
+    });
 
 
     // start express server
